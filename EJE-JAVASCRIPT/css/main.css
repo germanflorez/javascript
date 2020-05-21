@@ -1,0 +1,12 @@
+.result{
+    min-height: 200px;
+    margin-top: 20px;;
+}
+.result p{
+    font-size: 2rem;
+    margin: 0;
+}
+.result h1{
+    font-size: 3rem;
+    text-align: center;
+}
