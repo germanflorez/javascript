@@ -133,3 +133,128 @@ function calculadora(operador, valor1,valor2){
 }
 
 
+//Exercici Lletres Repetides
+
+//Fase 1
+
+
+
+
+function fase1 (){
+
+    var nombre = prompt("Escriba su nombre") ;
+    var letra  = nombre.split("");
+
+     for (var i = 0;i<letra.length;i++) {       
+    
+        var res = letra[i];
+        console.log (res);
+     }
+   
+
+}
+
+function fase2(){
+    var nombre = prompt("Escriba su nombre") ;
+    var letra  = nombre.split("");
+    var vocales =/[^aeiouAEIOUáéíóú]$/;
+    var numeros =/[^0-9]$/;
+
+    for (var i = 0;i<letra.length;i++) { 
+         
+        if(numeros.test(letra[i])){
+
+            if (vocales.test(letra[i])){
+                console.log("He trobat la CONSONTANT: " + letra[i]);
+           }else {
+               console.log("He trobat la VOCAL: " + letra[i]);
+           }  
+
+           
+        }else{
+           
+            console.log("Els noms de persones no contenen el número: " + letra[i]);
+
+        }
+   
+    } 
+}
+
+function fase3(){
+    var nombre = "GERMAN FLOREZ" ;
+    var res = new Map();
+    var c = "";
+
+    for(var i = 0; i < nombre.length; i++){
+        c = nombre.charAt(i);
+        if(!res.has(c)){
+            res.set(c,1);
+        }else{
+            res.set(c,res.get(c) + 1 );
+        }
+    }
+    console.log(res);              
+}
+
+
+function fase4(){
+
+    var nombre = "German";
+    var apellido = "florez";
+    var nomCompleto = [];
+    nombre = nombre.split("");
+    apellido = apellido.split("");
+
+    
+    for(var i = 0 ; i< nombre.length; i++){
+
+        nomCompleto.push(nombre[i]);
+    }
+       nomCompleto.push(" ");
+
+     for(var i = 0 ; i< apellido.length; i++){
+
+        nomCompleto.push(apellido[i]);
+    }
+
+    console.log(nomCompleto);
+
+
+
+
+    
+    /* var nombrecompleto = nombre.concat(" ", apellido);
+    
+    console.log(nombrecompleto); */
+
+   
+
+
+
+
+
+    
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* var res = letra.reduce((contadorLetras, letra) => {
+        contadorLetras[letra] = (contadorLetras[letra] || 0) + 1;
+        return contadorLetras;
+
+
+    }, {});
+ */
+
+ 
