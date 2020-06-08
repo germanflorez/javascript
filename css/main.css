@@ -1,3 +1,20 @@
+
+.tebrandlog{
+    font-size: 3rem;
+    text-shadow: 2px 2px 3px #000;
+    
+}
+
+.bgLog{
+    background-image: url("../img/registra-tu-restaurante.jpg");
+    
+}
+
+.logSelect{
+    font-size: 1.3rem;
+    
+}
+
 .result{
     min-height: 200px;
     margin-top: 20px;;

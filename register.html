@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PICKMENU-Registrarse</title>
+  <meta >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content= "ie-edge">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Codystar&family=Crushed&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ****************** navegacion *********************************-->
+  
+  <div class="ccontainer-fluid bgLog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+        <div class="row">
+          <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+            <div class="tlBrand text-warning mb-3  text-center tebrandlog">PICKMENU</div>
+            <div class="card rounded shadow shadow-sm">
+              <div class="card-header text-center">
+                <div class="row">
+                  <div class="col-6 border-right">
+                    <a href="#" class="text-decoration-none text-dark" > Iniciar sesi&oacute;n</a>
+                  </div>
+                  <div class="col-6">
+                    <span class="logSelect">Registrarse</span>  
+                  </div>
+                </div>  
+              </div>
+              <div class="card-body  p-5">
+
+                <div class="modal fade" id="msg" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+                  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Registro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        SU INFORMACION FUE GUARDADA CON EXITO =) <br>
+                        Por favor verifique su cuenta desde el link que le hemos enviado a su correo electronico.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="recargar();" data-dismiss="modal">Entendido</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <form class="form" role="form" autocomplete="off" id="regPick"  name="regPick"  novalidate="" method="">
+                  <!-- <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <svg class="bi bi-flag-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M3.5 1a.5.5 0 01.5.5v13a.5.5 0 01-1 0v-13a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                          <path fill-rule="evenodd" d="M3.762 2.558C4.735 1.909 5.348 1.5 6.5 1.5c.653 0 1.139.325 1.495.562l.032.022c.391.26.646.416.973.416.168 0 .356-.042.587-.126a8.89 8.89 0 00.593-.25c.058-.027.117-.053.18-.08.57-.255 1.278-.544 2.14-.544a.5.5 0 01.5.5v6a.5.5 0 01-.5.5c-.638 0-1.18.21-1.734.457l-.159.07c-.22.1-.453.205-.678.287A2.719 2.719 0 019 9.5c-.653 0-1.139-.325-1.495-.562l-.032-.022c-.391-.26-.646-.416-.973-.416-.833 0-1.218.246-2.223.916A.5.5 0 013.5 9V3a.5.5 0 01.223-.416l.04-.026z" clip-rule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control form-control-lg" id="" placeholder="Nombre Restaurante">
+                  </div> -->
+
+
+                    <!-- input email -->
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <svg class="bi bi-envelope-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M.05 3.555L8 8.414l7.95-4.859A2 2 0 0014 2H2A2 2 0 00.05 3.555zM16 4.697l-5.875 3.59L16 11.743V4.697zm-.168 8.108L9.157 8.879 8 9.586l-1.157-.707-6.675 3.926A2 2 0 002 14h12a2 2 0 001.832-1.195zM0 11.743l5.875-3.456L0 4.697v7.046z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control form-control-lg" id="email"  placeholder="E-mail"     onblur = "validateEmail();"/>
+                    <div class="invalid-feedback">
+                      Por favor ingrese un E-mail valido
+                    </div>
+                  </div>
+                  <div id="demo"></div>
+                  <!-- select provincia -->
+                  <div class="input-group pt-4 ">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <svg class="bi bi-geo" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                          <path d="M7.5 4h1v9a.5.5 0 0 1-1 0V4z"/>
+                          <path fill-rule="evenodd" d="M6.489 12.095a.5.5 0 0 1-.383.594c-.565.123-1.003.292-1.286.472-.302.192-.32.321-.32.339 0 .013.005.085.146.21.14.124.372.26.701.382.655.246 1.593.408 2.653.408s1.998-.162 2.653-.408c.329-.123.56-.258.701-.382.14-.125.146-.197.146-.21 0-.018-.018-.147-.32-.339-.283-.18-.721-.35-1.286-.472a.5.5 0 1 1 .212-.977c.63.137 1.193.34 1.61.606.4.253.784.645.784 1.182 0 .402-.219.724-.483.958-.264.235-.618.423-1.013.57-.793.298-1.855.472-3.004.472s-2.21-.174-3.004-.471c-.395-.148-.749-.336-1.013-.571-.264-.234-.483-.556-.483-.958 0-.537.384-.929.783-1.182.418-.266.98-.47 1.611-.606a.5.5 0 0 1 .595.383z"/>
+                        </svg>                       
+                      </div>
+                    </div>
+                    <select id="state" class="form-control form-control-lg" onblur = "validateState();">
+                      <option selected>Provincia</option>
+                      <option value='alava'>Álava</option>
+                      <option value='albacete'>Albacete</option>
+                      <option value='alicante'>Alicante/Alacant</option>
+                      <option value='almeria'>Almería</option>
+                      <option value='asturias'>Asturias</option>
+                      <option value='avila'>Ávila</option>
+                      <option value='badajoz'>Badajoz</option>
+                      <option value='barcelona'>Barcelona</option>
+                      <option value='burgos'>Burgos</option>
+                      <option value='caceres'>Cáceres</option>
+                      <option value='cadiz'>Cádiz</option>
+                      <option value='cantabria'>Cantabria</option>
+                      <option value='castellon'>Castellón/Castelló</option>
+                      <option value='ceuta'>Ceuta</option>
+                      <option value='ciudadreal'>Ciudad Real</option>
+                      <option value='cordoba'>Córdoba</option>
+                      <option value='cuenca'>Cuenca</option>
+                      <option value='girona'>Girona</option>
+                      <option value='laspalmas'>Las Palmas</option>
+                      <option value='granada'>Granada</option>
+                      <option value='guadalajara'>Guadalajara</option>
+                      <option value='guipuzcoa'>Guipúzcoa</option>
+                      <option value='huelva'>Huelva</option>
+                      <option value='huesca'>Huesca</option>
+                      <option value='illesbalears'>Illes Balears</option>
+                      <option value='jaen'>Jaén</option>
+                      <option value='acoruña'>A Coruña</option>
+                      <option value='larioja'>La Rioja</option>
+                      <option value='leon'>León</option>
+                      <option value='lleida'>Lleida</option>
+                      <option value='lugo'>Lugo</option>
+                      <option value='madrid'>Madrid</option>
+                      <option value='malaga'>Málaga</option>
+                      <option value='melilla'>Melilla</option>
+                      <option value='murcia'>Murcia</option>
+                      <option value='navarra'>Navarra</option>
+                      <option value='ourense'>Ourense</option>
+                      <option value='palencia'>Palencia</option>
+                      <option value='pontevedra'>Pontevedra</option>
+                      <option value='salamanca'>Salamanca</option>
+                      <option value='segovia'>Segovia</option>
+                      <option value='sevilla'>Sevilla</option>
+                      <option value='soria'>Soria</option>
+                      <option value='tarragona'>Tarragona</option>
+                      <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                      <option value='teruel'>Teruel</option>
+                      <option value='toledo'>Toledo</option>
+                      <option value='valencia'>Valencia/Valéncia</option>
+                      <option value='valladolid'>Valladolid</option>
+                      <option value='vizcaya'>Vizcaya</option>
+                      <option value='zamora'>Zamora</option>
+                      <option value='zaragoza'>Zaragoza</option>
+                    </select> 
+                    <div class="invalid-feedback">
+                      Por favor elige una provincia
+                    </div>
+                  </div>
+                  <!-- input contraseña  -->
+                  <div class="input-group pt-4 ">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <svg class="bi bi-lock-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="11" height="9" x="2.5" y="7" rx="2"/>
+                          <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 117 0v3h-1V4a2.5 2.5 0 00-5 0v3h-1V4z" clip-rule="evenodd"/>
+                        </svg>
+                        
+                      </div>
+                    </div>
+                    <input type="password" class="form-control form-control-lg" id="passw"  onblur = "validatePassw();" placeholder="Contraseña">
+                    <div class="invalid-feedback">
+                      La contraseña no puede ser inferior a 6 carater y debe conter al menos un numero, una letra mayuscula y una minuscula.
+                    </div>
+
+                  </div>
+                  <!-- input repetir contraseña -->
+                  <div class="input-group pt-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <svg class="bi bi-lock-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="11" height="9" x="2.5" y="7" rx="2"/>
+                          <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 117 0v3h-1V4a2.5 2.5 0 00-5 0v3h-1V4z" clip-rule="evenodd"/>
+                        </svg>
+                        
+                      </div>
+                    </div>
+                    <input type="password" class="form-control form-control-lg"  id="repassw"  onblur="testPassw();"  placeholder=" Repetir Contraseña">
+                  <div class="invalid-feedback">
+                    La contraseña no coincide con la anterior
+                  </div>
+                  </div>    
+                  <!-- boton enviar--> 
+                  <button type="button" class="btn btn-warning btn-lg float-right mt-3" id="btnLogin"  onclick="validate();" >
+                    <svg class="bi bi-box-arrow-in-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M7.854 11.354a.5.5 0 000-.708L5.207 8l2.647-2.646a.5.5 0 10-.708-.708l-3 3a.5.5 0 000 .708l3 3a.5.5 0 00.708 0z" clip-rule="evenodd"/>
+                      <path fill-rule="evenodd" d="M15 8a.5.5 0 00-.5-.5h-9a.5.5 0 000 1h9A.5.5 0 0015 8z" clip-rule="evenodd"/>
+                      <path fill-rule="evenodd" d="M2.5 14.5A1.5 1.5 0 011 13V3a1.5 1.5 0 011.5-1.5h8A1.5 1.5 0 0112 3v1.5a.5.5 0 01-1 0V3a.5.5 0 00-.5-.5h-8A.5.5 0 002 3v10a.5.5 0 00.5.5h8a.5.5 0 00.5-.5v-1.5a.5.5 0 011 0V13a1.5 1.5 0 01-1.5 1.5h-8z" clip-rule="evenodd"/>
+                    </svg>
+                    Registrase</button>
+                </form>
+              </div>  
+              
+            </div> 
+          </div>
+        </div>
+      </div>                 
+    </div>
+  </div>
+  </div>
+</body>
+<script src="js/valida.js"></script>
+<script src="js/jquery-3.4.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>
