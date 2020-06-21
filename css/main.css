@@ -6,8 +6,7 @@
 }
 
 .bgLog{
-    background-image: url("../img/registra-tu-restaurante.jpg");
-    
+    background-image: url("../img/registra-tu-restaurante.jpg");    
 }
 
 .logSelect{
@@ -26,4 +25,9 @@
 .result h1{
     font-size: 3rem;
     text-align: center;
+}
+
+.colorFace{
+    color: #fff;
+    transition: color 0.2s linear 0.1s;
 }
